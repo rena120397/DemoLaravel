@@ -1,8 +1,16 @@
 <?php
 
-Route::get('/', 'PagesController@inicio');
+Route::get('/', 'PagesController@inicio')->name('inicio');
 
-Route::get('/{id}', 'PagesController@detalle')->name('notas.detalle');
+Route::get('/detalle/{id}', 'PagesController@detalle')->name('notas.detalle');
+
+Route::post('/', 'PagesController@Crear' )->name('notas.crear');
+
+Route::get('/editar/{id}', 'PagesController@editar')->name('notas.editar');
+
+Route::put('/update/{id}', 'PagesController@update')->name('notas.update');
+
+Route::delete('/eliminar/{id}', 'PagesController@eliminar')->name('notas.eliminar');
 
 Route::get('fotos', 'PagesController@fotos')->name('foto');
 
